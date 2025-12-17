@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="RedFace Blockchain Network - Official Protocol Documentation. A Layer-1 EVM-compatible blockchain designed for low fees and scalable performance.">
+    <meta name="keywords" content="RedFace, Blockchain, Layer-1, EVM, Ethereum, Documentation, Protocol">
+    <meta name="author" content="RedFace Network Foundation">
+    <title>RedFace Blockchain Network | Official Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="doc-header">
+        <div class="doc-header__logo">
+            <div class="doc-header__logo-icon">🔴</div>
+            <div class="doc-header__title">
+                RedFace
+                <span>Protocol Documentation</span>
+            </div>
+        </div>
+        <nav class="doc-header__nav">
+            <a href="#introduction" class="doc-header__link">Introduction</a>
+            <a href="#architecture" class="doc-header__link">Architecture</a>
+            <a href="#developers" class="doc-header__link">Developers</a>
+            <a href="#roadmap" class="doc-header__link">Roadmap</a>
+            <span class="doc-header__version">v0.1.0-draft</span>
+        </nav>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </header>
+
+    <div class="doc-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="doc-sidebar" id="sidebar">
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Overview</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#introduction" class="doc-sidebar__link active">Introduction</a></li>
+                    <li><a href="#design-philosophy" class="doc-sidebar__link">Design Philosophy</a></li>
+                    <li><a href="#positioning" class="doc-sidebar__link">Positioning</a></li>
+                </ul>
+            </div>
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Technical</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#architecture" class="doc-sidebar__link">Core Architecture</a></li>
+                    <li><a href="#consensus" class="doc-sidebar__link">Consensus & Validation</a></li>
+                    <li><a href="#gas-fees" class="doc-sidebar__link">Gas & Fee Model</a></li>
+                    <li><a href="#security" class="doc-sidebar__link">Security Model</a></li>
+                </ul>
+            </div>
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Economics</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#treasury" class="doc-sidebar__link">Treasury & Funding</a></li>
+                    <li><a href="#fee-distribution" class="doc-sidebar__link">Fee Distribution</a></li>
+                </ul>
+            </div>
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Development</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#developers" class="doc-sidebar__link">Developer Guide</a></li>
+                    <li><a href="#smart-contracts" class="doc-sidebar__link">Smart Contracts</a></li>
+                    <li><a href="#tooling" class="doc-sidebar__link">Tooling</a></li>
+                </ul>
+            </div>
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Governance</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#governance" class="doc-sidebar__link">Governance Model</a></li>
+                    <li><a href="#roadmap" class="doc-sidebar__link">Roadmap</a></li>
+                </ul>
+            </div>
+            <div class="doc-sidebar__section">
+                <div class="doc-sidebar__heading">Legal</div>
+                <ul class="doc-sidebar__nav">
+                    <li><a href="#legal" class="doc-sidebar__link">Legal & Compliance</a></li>
+                    <li><a href="#disclaimers" class="doc-sidebar__link">Disclaimers</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="doc-main">
+            <div class="doc-content">
+                <!-- Hero Section -->
+                <section class="doc-hero">
+                    <div class="doc-hero__badge">Official Protocol Documentation</div>
+                    <h1>RedFace Blockchain Network</h1>
+                    <p class="doc-hero__subtitle">
+                        A Layer-1 EVM-compatible blockchain network engineered for extremely low transaction fees,
+                        transparent governance, and sustainable ecosystem development.
+                    </p>
+                    <div class="doc-hero__meta">
+                        <div class="doc-hero__meta-item">
+                            <strong>Status:</strong> Pre-Testnet Development
+                        </div>
+                        <div class="doc-hero__meta-item">
+                            <strong>Version:</strong> 0.1.0-draft
+                        </div>
+                        <div class="doc-hero__meta-item">
+                            <strong>Last Updated:</strong> December 2024
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Introduction -->
+                <section id="introduction" class="doc-section">
+                    <h2>1. Introduction</h2>
+
+                    <h3>1.1 What is RedFace Blockchain?</h3>
+                    <p>
+                        RedFace is a Layer-1 blockchain network derived from the Ethereum codebase. It is designed to
+                        provide
+                        an EVM-compatible execution environment with significantly reduced transaction costs compared to
+                        Ethereum mainnet, while maintaining compatibility with existing Ethereum tooling, smart
+                        contracts,
+                        and developer workflows.
+                    </p>
+                    <p>
+                        The network prioritizes <strong>accessibility</strong> through low fees,
+                        <strong>transparency</strong>
+                        through publicly auditable treasury operations, and <strong>sustainability</strong> through a
+                        carefully
+                        designed economic model that funds ongoing development and security.
+                    </p>
+
+                    <h3>1.2 Why RedFace Exists</h3>
+                    <p>
+                        Ethereum's success has demonstrated the value of a decentralized smart contract platform.
+                        However,
+                        high gas fees on Ethereum mainnet have created barriers for many use cases and users. While
+                        Layer-2
+                        solutions address some of these concerns, they introduce additional complexity and trust
+                        assumptions.
+                    </p>
+                    <p>
+                        RedFace addresses this by providing a Layer-1 network that:
+                    </p>
+                    <ul>
+                        <li>Maintains full EVM compatibility for seamless migration of existing applications</li>
+                        <li>Implements optimized parameters for dramatically lower transaction costs</li>
+                        <li>Establishes transparent treasury mechanisms for sustainable funding</li>
+                        <li>Follows a clear path toward progressive decentralization</li>
+                    </ul>
+
+                    <div class="info-card info-card--info">
+                        <div class="info-card__title">ℹ️ Important Context</div>
+                        <div class="info-card__content">
+                            <p>
+                                RedFace does not claim to replace Ethereum or solve all blockchain scalability
+                                challenges.
+                                It represents a specific set of trade-offs optimized for low-cost transactions in a
+                                trusted validator environment, with plans for progressive decentralization over time.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Design Philosophy -->
+                <section id="design-philosophy" class="doc-section">
+                    <h2>2. Design Philosophy</h2>
+
+                    <h3>2.1 Core Principles</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">💰</div>
+                            <div class="feature-card__title">Fee Accessibility</div>
+                            <p class="feature-card__desc">
+                                Transaction costs should not be a barrier to participation. The network is optimized
+                                to minimize fees while maintaining economic sustainability.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">🔍</div>
+                            <div class="feature-card__title">Radical Transparency</div>
+                            <p class="feature-card__desc">
+                                All treasury operations, fund allocations, and governance decisions are publicly
+                                documented and auditable on-chain.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">🔧</div>
+                            <div class="feature-card__title">Developer Familiarity</div>
+                            <p class="feature-card__desc">
+                                Full EVM compatibility means existing Solidity code, tools, and workflows work
+                                without modification.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">📈</div>
+                            <div class="feature-card__title">Progressive Decentralization</div>
+                            <p class="feature-card__desc">
+                                The network launches with controlled decentralization, with explicit plans and
+                                mechanisms for increasing decentralization over time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>2.2 Explicit Trade-offs</h3>
+                    <p>
+                        Every blockchain design involves trade-offs. RedFace explicitly acknowledges the following
+                        design decisions and their implications:
+                    </p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Design Choice</th>
+                                    <th>Benefit</th>
+                                    <th>Trade-off</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Limited initial validator set</td>
+                                    <td>Higher throughput, lower latency</td>
+                                    <td>Reduced decentralization at genesis</td>
+                                </tr>
+                                <tr>
+                                    <td>Lower gas prices</td>
+                                    <td>Accessible transaction costs</td>
+                                    <td>Reduced spam resistance (mitigated through other mechanisms)</td>
+                                </tr>
+                                <tr>
+                                    <td>Treasury fee allocation</td>
+                                    <td>Sustainable development funding</td>
+                                    <td>Additional fee overhead for users</td>
+                                </tr>
+                                <tr>
+                                    <td>BSC-style consensus</td>
+                                    <td>Proven performance characteristics</td>
+                                    <td>Centralization concerns require active mitigation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION: Positioning -->
+                <section id="positioning" class="doc-section">
+                    <h2>3. Network Positioning</h2>
+
+                    <h3>3.1 EVM Compatibility</h3>
+                    <p>
+                        RedFace implements the Ethereum Virtual Machine (EVM) as specified in the Ethereum Yellow Paper.
+                        This means:
+                    </p>
+                    <ul>
+                        <li>Smart contracts written in Solidity or Vyper can be deployed without modification</li>
+                        <li>Standard Ethereum tooling (Hardhat, Foundry, Remix, ethers.js, web3.js) works natively</li>
+                        <li>Existing audited contracts can be redeployed as-is</li>
+                        <li>Developers do not need to learn new languages or paradigms</li>
+                    </ul>
+
+                    <h3>3.2 Comparison with Other Networks</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Ethereum Mainnet</th>
+                                    <th>BNB Smart Chain</th>
+                                    <th>RedFace (Planned)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Consensus</td>
+                                    <td>Proof of Stake</td>
+                                    <td>Proof of Staked Authority</td>
+                                    <td>Proof of Staked Authority</td>
+                                </tr>
+                                <tr>
+                                    <td>Block Time (Target)</td>
+                                    <td>~12 seconds</td>
+                                    <td>~3 seconds</td>
+                                    <td>~3 seconds</td>
+                                </tr>
+                                <tr>
+                                    <td>Active Validators</td>
+                                    <td>~900,000+</td>
+                                    <td>21 (rotated from 50+)</td>
+                                    <td>Limited at genesis, expanding</td>
+                                </tr>
+                                <tr>
+                                    <td>EVM Version</td>
+                                    <td>Latest</td>
+                                    <td>Maintained parity</td>
+                                    <td>Maintained parity</td>
+                                </tr>
+                                <tr>
+                                    <td>Fee Model</td>
+                                    <td>EIP-1559</td>
+                                    <td>Legacy + modifications</td>
+                                    <td>Modified EIP-1559</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card info-card--warning">
+                        <div class="info-card__title">⚠️ Honest Assessment</div>
+                        <div class="info-card__content">
+                            <p>
+                                RedFace does not claim technical superiority over Ethereum or other established
+                                networks.
+                                Its value proposition is a specific optimization for low-cost transactions, transparent
+                                treasury operations, and a clear development roadmap—not breakthrough technology.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Core Architecture -->
+                <section id="architecture" class="doc-section">
+                    <h2>4. Core Architecture</h2>
+
+                    <h3>4.1 Ethereum Fork Basis</h3>
+                    <p>
+                        RedFace is built by forking the official Go Ethereum (Geth) client. This approach provides:
+                    </p>
+                    <ul>
+                        <li><strong>Battle-tested codebase:</strong> Geth has been securing billions of dollars in value
+                            since 2015</li>
+                        <li><strong>Active maintenance:</strong> Security patches and improvements from the Ethereum
+                            Foundation</li>
+                        <li><strong>Extensive documentation:</strong> Comprehensive resources for developers and
+                            operators</li>
+                        <li><strong>Tooling compatibility:</strong> Native support for all Ethereum development tools
+                        </li>
+                    </ul>
+
+                    <h3>4.2 Network Layers</h3>
+                    <p>The RedFace network consists of three primary layers:</p>
+
+                    <h4>4.2.1 Execution Layer</h4>
+                    <p>
+                        The execution layer processes transactions and smart contract execution. It implements the
+                        EVM specification and maintains the world state (account balances, contract storage, etc.).
+                    </p>
+                    <ul>
+                        <li>Full EVM bytecode compatibility</li>
+                        <li>Standard Ethereum JSON-RPC API</li>
+                        <li>Support for all existing EVM opcodes</li>
+                        <li>Compatible with eth_call, eth_estimateGas, and other standard methods</li>
+                    </ul>
+
+                    <h4>4.2.2 Consensus Layer</h4>
+                    <p>
+                        The consensus layer coordinates validator agreement on block production. RedFace uses a
+                        Proof of Staked Authority (PoSA) consensus mechanism, similar to BNB Smart Chain.
+                    </p>
+                    <ul>
+                        <li>Validators selected based on stake and authority</li>
+                        <li>Deterministic block production schedule</li>
+                        <li>Fast finality (~6 seconds, 2 block confirmations)</li>
+                        <li>Slashing for provable misbehavior</li>
+                    </ul>
+
+                    <h4>4.2.3 Networking Layer</h4>
+                    <p>
+                        The networking layer handles peer discovery, block propagation, and transaction broadcasting
+                        using the standard Ethereum DevP2P protocol.
+                    </p>
+                    <ul>
+                        <li>Kademlia-based peer discovery</li>
+                        <li>Encrypted peer connections</li>
+                        <li>Efficient block and transaction propagation</li>
+                        <li>Standard Ethereum network protocol compatibility</li>
+                    </ul>
+
+                    <h3>4.3 Modifications from Ethereum Mainnet</h3>
+                    <p>RedFace makes the following modifications to the standard Ethereum configuration:</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Ethereum Mainnet</th>
+                                    <th>RedFace</th>
+                                    <th>Rationale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Block Time</td>
+                                    <td>~12 seconds</td>
+                                    <td>~3 seconds</td>
+                                    <td>Faster confirmations</td>
+                                </tr>
+                                <tr>
+                                    <td>Block Gas Limit</td>
+                                    <td>30M gas</td>
+                                    <td>To be determined</td>
+                                    <td>Throughput optimization</td>
+                                </tr>
+                                <tr>
+                                    <td>Base Fee Target</td>
+                                    <td>Market-driven</td>
+                                    <td>Lower floor</td>
+                                    <td>Fee accessibility</td>
+                                </tr>
+                                <tr>
+                                    <td>Consensus</td>
+                                    <td>Casper PoS</td>
+                                    <td>PoSA</td>
+                                    <td>Performance optimization</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION: Consensus -->
+                <section id="consensus" class="doc-section">
+                    <h2>5. Consensus & Validation</h2>
+
+                    <h3>5.1 Proof of Staked Authority (PoSA)</h3>
+                    <p>
+                        RedFace employs a Proof of Staked Authority consensus mechanism. This hybrid approach
+                        combines elements of Proof of Stake (economic security through staking) with Proof of
+                        Authority (permissioned validator set for performance).
+                    </p>
+
+                    <h3>5.2 Validator Requirements</h3>
+                    <p>To become a validator on RedFace, operators must meet the following requirements:</p>
+                    <ul>
+                        <li><strong>Minimum Stake:</strong> Amount to be determined prior to mainnet (subject to
+                            economic analysis)</li>
+                        <li><strong>Technical Requirements:</strong> Reliable infrastructure capable of consistent block
+                            production</li>
+                        <li><strong>Uptime Commitment:</strong> Validators must maintain high availability</li>
+                        <li><strong>Legal Compliance:</strong> Validators must operate in compliance with applicable
+                            laws</li>
+                    </ul>
+
+                    <h3>5.3 Block Production</h3>
+                    <p>
+                        Validators take turns producing blocks according to a deterministic schedule. Each validator
+                        is assigned specific slots in which they are expected to produce blocks.
+                    </p>
+                    <ul>
+                        <li>Target block time: 3 seconds</li>
+                        <li>Validators rotate through block production slots</li>
+                        <li>Missed slots result in empty block periods</li>
+                        <li>Consistent missing of assigned slots may trigger slashing</li>
+                    </ul>
+
+                    <h3>5.4 Validator Responsibilities</h3>
+                    <ul>
+                        <li>Produce blocks during assigned slots</li>
+                        <li>Validate transactions and blocks from other validators</li>
+                        <li>Maintain network connectivity and propagate blocks</li>
+                        <li>Run up-to-date client software</li>
+                        <li>Respond to network upgrades in a timely manner</li>
+                    </ul>
+
+                    <h3>5.5 Slashing Conditions</h3>
+                    <p>
+                        Validators may have their stake slashed (partially confiscated) for provable misbehavior:
+                    </p>
+                    <ul>
+                        <li><strong>Double Signing:</strong> Signing two different blocks for the same slot</li>
+                        <li><strong>Extended Downtime:</strong> Failing to produce blocks for extended periods</li>
+                        <li><strong>Malicious Transactions:</strong> Including demonstrably invalid transactions</li>
+                    </ul>
+
+                    <div class="info-card info-card--info">
+                        <div class="info-card__title">ℹ️ Validator Onboarding</div>
+                        <div class="info-card__content">
+                            <p>
+                                At genesis, the validator set will be limited and controlled to ensure network
+                                stability.
+                                A formal validator onboarding process will be published prior to testnet launch, with
+                                progressive expansion planned as the network matures.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Gas & Fees -->
+                <section id="gas-fees" class="doc-section">
+                    <h2>6. Gas & Fee Model</h2>
+
+                    <h3>6.1 Gas Mechanics</h3>
+                    <p>
+                        RedFace uses the standard Ethereum gas model for measuring computational work. Each EVM
+                        operation has an associated gas cost, and transactions specify a gas limit and gas price.
+                    </p>
+                    <ul>
+                        <li>Gas costs per operation are identical to Ethereum</li>
+                        <li>Standard gas estimation methods work as expected</li>
+                        <li>EIP-1559 style transactions are supported</li>
+                    </ul>
+
+                    <h3>6.2 Fee Calculation</h3>
+                    <p>Transaction fees are calculated as:</p>
+                    <pre><code>Transaction Fee = Gas Used × Gas Price</code></pre>
+                    <p>
+                        The effective gas price depends on network congestion, but is designed to remain
+                        significantly lower than Ethereum mainnet through parameter optimization and the
+                        limited validator set's reduced coordination overhead.
+                    </p>
+
+                    <h3 id="fee-distribution">6.3 Fee Distribution</h3>
+                    <p>
+                        Unlike Ethereum (where base fees are burned) or traditional blockchains (where all fees
+                        go to validators), RedFace implements a split fee distribution model:
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card__value">~70%</div>
+                            <div class="stat-card__label">Validators</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__value">~20%</div>
+                            <div class="stat-card__label">Ecosystem Treasury</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__value">~10%</div>
+                            <div class="stat-card__label">Network Maintenance</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card info-card--warning">
+                        <div class="info-card__title">⚠️ Preliminary Figures</div>
+                        <div class="info-card__content">
+                            <p>
+                                The above percentages are preliminary targets and may be adjusted based on economic
+                                modeling and community feedback prior to mainnet launch. Final percentages will be
+                                published in the network specification.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>6.4 Spam Prevention</h3>
+                    <p>
+                        Low fees create potential for spam attacks. RedFace implements multiple mitigation strategies:
+                    </p>
+                    <ul>
+                        <li><strong>Minimum Gas Price:</strong> A floor gas price prevents zero-cost spam</li>
+                        <li><strong>Rate Limiting:</strong> Per-address transaction rate limits during congestion</li>
+                        <li><strong>Priority Fees:</strong> EIP-1559 priority fees for time-sensitive transactions</li>
+                        <li><strong>Mempool Management:</strong> Intelligent transaction eviction policies</li>
+                    </ul>
+
+                    <h3>6.5 Economic Trade-offs</h3>
+                    <p>
+                        The low-fee model involves explicit trade-offs:
+                    </p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Consideration</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Validator Revenue</td>
+                                    <td>Lower per-transaction fees require higher volume for equivalent revenue</td>
+                                </tr>
+                                <tr>
+                                    <td>Security Budget</td>
+                                    <td>Reduced fee revenue means smaller economic security budget</td>
+                                </tr>
+                                <tr>
+                                    <td>Spam Vulnerability</td>
+                                    <td>Lower costs make spam attacks cheaper (mitigated through other mechanisms)</td>
+                                </tr>
+                                <tr>
+                                    <td>Treasury Accumulation</td>
+                                    <td>Lower fees mean slower treasury growth</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION: Treasury -->
+                <section id="treasury" class="doc-section">
+                    <h2>7. Treasury & Funding Model</h2>
+
+                    <h3>7.1 Purpose of the Treasury</h3>
+                    <p>
+                        The RedFace Treasury is a transparent on-chain fund designed to ensure the long-term
+                        sustainability of the network. It is <strong>not</strong> a profit-generation mechanism
+                        or investment vehicle.
+                    </p>
+                    <p>Treasury funds are designated exclusively for:</p>
+                    <ul>
+                        <li>Core protocol development and maintenance</li>
+                        <li>Security audits and bug bounties</li>
+                        <li>Infrastructure support and public goods</li>
+                        <li>Ecosystem development grants</li>
+                        <li>Documentation and developer education</li>
+                    </ul>
+
+                    <h3>7.2 Fund Sources</h3>
+                    <p>The Treasury receives funds from two sources:</p>
+                    <ul>
+                        <li><strong>Fee Allocation:</strong> A percentage of all transaction fees (see Fee Distribution)
+                        </li>
+                        <li><strong>Genesis Allocation:</strong> An initial allocation at network genesis for bootstrap
+                            funding</li>
+                    </ul>
+
+                    <h3>7.3 Fund Storage</h3>
+                    <p>
+                        Treasury funds are held in a multi-signature smart contract requiring multiple
+                        authorized signers to approve any expenditure. The contract address and all
+                        transactions are publicly visible on the block explorer.
+                    </p>
+
+                    <h3>7.4 Audit Process</h3>
+                    <ul>
+                        <li>All treasury transactions are on-chain and publicly auditable</li>
+                        <li>Quarterly transparency reports detailing all expenditures</li>
+                        <li>Annual third-party audits of treasury operations</li>
+                        <li>Public disclosure of all grant recipients and amounts</li>
+                    </ul>
+
+                    <h3>7.5 Spending Categories</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Purpose</th>
+                                    <th>Target Allocation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Core Development</td>
+                                    <td>Protocol development, client maintenance</td>
+                                    <td>40-50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Security</td>
+                                    <td>Audits, bug bounties, incident response</td>
+                                    <td>20-25%</td>
+                                </tr>
+                                <tr>
+                                    <td>Infrastructure</td>
+                                    <td>Public RPC nodes, explorers, tooling</td>
+                                    <td>15-20%</td>
+                                </tr>
+                                <tr>
+                                    <td>Ecosystem Grants</td>
+                                    <td>Developer grants, community projects</td>
+                                    <td>10-15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Operations</td>
+                                    <td>Legal, administrative, communications</td>
+                                    <td>5-10%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>7.6 Transparency Guarantees</h3>
+                    <div class="info-card info-card--success">
+                        <div class="info-card__title">✓ Transparency Commitments</div>
+                        <div class="info-card__content">
+                            <ul>
+                                <li>Treasury contract address will be published and immutable</li>
+                                <li>All expenditures require on-chain multi-sig approval</li>
+                                <li>Monthly summaries of treasury inflows and outflows</li>
+                                <li>Public grant application and review process</li>
+                                <li>No private or undisclosed treasury allocations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Legal & Compliance -->
+                <section id="legal" class="doc-section">
+                    <h2>8. Legal & Compliance Overview</h2>
+
+                    <div class="info-card info-card--danger">
+                        <div class="info-card__title">⛔ Critical Legal Notice</div>
+                        <div class="info-card__content">
+                            <p>
+                                This section provides general information about the RedFace Network's approach to legal
+                                and regulatory matters. It does not constitute legal advice. All participants should
+                                consult with qualified legal counsel in their jurisdiction before engaging with the
+                                network.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>8.1 Compliance Philosophy</h3>
+                    <p>
+                        RedFace Network is committed to operating transparently and in good faith with regulatory
+                        authorities worldwide. The project is designed with regulatory awareness as a core principle,
+                        not an afterthought.
+                    </p>
+                    <ul>
+                        <li>Proactive engagement with legal counsel specializing in blockchain and securities law</li>
+                        <li>Conservative interpretation of regulatory requirements</li>
+                        <li>Clear documentation of all project activities and fund flows</li>
+                        <li>Willingness to cooperate with legitimate regulatory inquiries</li>
+                    </ul>
+
+                    <h3>8.2 Non-Security Positioning</h3>
+                    <p>
+                        The native token of RedFace Network is designed and intended to function as a <strong>utility
+                            token</strong> for paying network transaction fees. It is explicitly <strong>not</strong>:
+                    </p>
+                    <ul>
+                        <li>A security or investment contract</li>
+                        <li>A promise of profits, dividends, or returns</li>
+                        <li>A share in any legal entity or enterprise</li>
+                        <li>A representation of ownership in any asset</li>
+                    </ul>
+
+                    <h3>8.3 No Profit Guarantees</h3>
+                    <p>
+                        <strong>The RedFace Network makes no promises, representations, or guarantees
+                            regarding:</strong>
+                    </p>
+                    <ul>
+                        <li>Future token value or price appreciation</li>
+                        <li>Investment returns of any kind</li>
+                        <li>Guaranteed yields or staking rewards</li>
+                        <li>Profitability of any activities on the network</li>
+                    </ul>
+                    <p>
+                        Network fees paid to validators and the treasury are compensation for services rendered
+                        (transaction processing, network security) and should not be construed as investment returns.
+                    </p>
+
+                    <h3>8.4 Risk Disclosures</h3>
+                    <p>Participation in the RedFace Network involves significant risks, including but not limited to:
+                    </p>
+                    <ul>
+                        <li><strong>Technical Risks:</strong> Software bugs, security vulnerabilities, consensus
+                            failures</li>
+                        <li><strong>Economic Risks:</strong> Token value volatility, liquidity constraints</li>
+                        <li><strong>Regulatory Risks:</strong> Changes in laws that may affect network operations</li>
+                        <li><strong>Operational Risks:</strong> Validator failures, network outages</li>
+                        <li><strong>Market Risks:</strong> Competition from other networks, changes in user demand</li>
+                    </ul>
+
+                    <h3>8.5 Regulatory Cooperation</h3>
+                    <p>
+                        The RedFace Network is prepared to cooperate with regulatory authorities in accordance with
+                        applicable law. This includes:
+                    </p>
+                    <ul>
+                        <li>Responding to legitimate legal process and regulatory inquiries</li>
+                        <li>Implementing required compliance measures as regulations evolve</li>
+                        <li>Maintaining records as required by applicable laws</li>
+                        <li>Working with legal counsel to ensure ongoing compliance</li>
+                    </ul>
+
+                    <h3>8.6 Jurisdiction Considerations</h3>
+                    <p>
+                        RedFace Network is a decentralized software protocol. Users are responsible for ensuring
+                        their own compliance with applicable laws in their jurisdiction. The network does not
+                        provide services to users in jurisdictions where such services would be prohibited.
+                    </p>
+                </section>
+
+                <!-- SECTION: Smart Contracts & Developer Guide -->
+                <section id="developers" class="doc-section">
+                    <h2>9. Smart Contracts & Developer Guide</h2>
+
+                    <h3 id="smart-contracts">9.1 EVM Compatibility</h3>
+                    <p>
+                        RedFace provides full compatibility with the Ethereum Virtual Machine. This means:
+                    </p>
+                    <ul>
+                        <li>Solidity contracts compile and deploy without modification</li>
+                        <li>Vyper contracts are fully supported</li>
+                        <li>All standard EVM opcodes function identically to Ethereum</li>
+                        <li>ABI encoding/decoding is fully compatible</li>
+                        <li>Standard interfaces (ERC-20, ERC-721, ERC-1155, etc.) work as expected</li>
+                    </ul>
+
+                    <h3 id="tooling">9.2 Development Tooling</h3>
+                    <p>All major Ethereum development tools are compatible with RedFace:</p>
+
+                    <h4>Hardhat</h4>
+                    <pre><code>// hardhat.config.js
+module.exports = {
+  networks: {
+    redface: {
+      url: "https://rpc.redface.network", // Placeholder
+      chainId: 0, // To be assigned
+      accounts: [process.env.PRIVATE_KEY]
+    },
+    redfaceTestnet: {
+      url: "https://testnet-rpc.redface.network", // Placeholder
+      chainId: 0, // To be assigned
+      accounts: [process.env.PRIVATE_KEY]
+    }
+  }
+};</code></pre>
+
+                    <h4>Foundry</h4>
+                    <pre><code># Deploy with Foundry
+forge create --rpc-url https://rpc.redface.network \
+  --private-key $PRIVATE_KEY \
+  src/MyContract.sol:MyContract</code></pre>
+
+                    <h4>Remix IDE</h4>
+                    <p>
+                        Connect Remix to RedFace by selecting "Injected Provider" with MetaMask configured
+                        for the RedFace network, or use "External HTTP Provider" with the RPC URL.
+                    </p>
+
+                    <h3>9.3 Network Configuration</h3>
+                    <div class="info-card info-card--warning">
+                        <div class="info-card__title">⚠️ Placeholders</div>
+                        <div class="info-card__content">
+                            <p>
+                                The following values are placeholders and will be finalized prior to testnet launch.
+                                Do not use these values for production deployments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Testnet (Planned)</th>
+                                    <th>Mainnet (Planned)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Network Name</td>
+                                    <td>RedFace Testnet</td>
+                                    <td>RedFace Mainnet</td>
+                                </tr>
+                                <tr>
+                                    <td>RPC URL</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                                <tr>
+                                    <td>Chain ID</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                                <tr>
+                                    <td>Currency Symbol</td>
+                                    <td>tRFC</td>
+                                    <td>RFC</td>
+                                </tr>
+                                <tr>
+                                    <td>Block Explorer</td>
+                                    <td>TBD</td>
+                                    <td>TBD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>9.4 Contract Deployment Flow</h3>
+                    <ol>
+                        <li><strong>Develop:</strong> Write and test contracts locally using Hardhat or Foundry</li>
+                        <li><strong>Test:</strong> Deploy to RedFace Testnet and verify functionality</li>
+                        <li><strong>Audit:</strong> For significant value at risk, obtain professional security audit
+                        </li>
+                        <li><strong>Deploy:</strong> Deploy to RedFace Mainnet</li>
+                        <li><strong>Verify:</strong> Verify source code on block explorer for transparency</li>
+                    </ol>
+
+                    <h3>9.5 Security Best Practices</h3>
+                    <ul>
+                        <li>Always test on testnet before mainnet deployment</li>
+                        <li>Use established, audited libraries (OpenZeppelin, Solmate)</li>
+                        <li>Implement appropriate access controls</li>
+                        <li>Consider upgrade patterns for long-lived contracts</li>
+                        <li>Document all external dependencies</li>
+                        <li>Obtain professional audits for contracts handling significant value</li>
+                        <li>Implement emergency pause functionality where appropriate</li>
+                    </ul>
+                </section>
+
+                <!-- SECTION: Roadmap -->
+                <section id="roadmap" class="doc-section">
+                    <h2>10. Network Roadmap (2025–2026)</h2>
+
+                    <p>
+                        The following roadmap outlines planned development phases. All timelines are estimates
+                        and may be adjusted based on technical requirements, security considerations, or
+                        regulatory developments.
+                    </p>
+
+                    <div class="timeline">
+                        <div class="timeline-item active">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 0</span>
+                                <span class="timeline-item__date">2025 (Current)</span>
+                            </div>
+                            <div class="timeline-item__title">Research & Legal Foundation</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Complete legal structure and compliance framework</li>
+                                    <li>Finalize tokenomics and fee distribution model</li>
+                                    <li>Publish comprehensive documentation</li>
+                                    <li>Establish core development team</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Legal opinion letters</li>
+                                    <li>Complete technical specification</li>
+                                    <li>This documentation website</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Regulatory uncertainty, legal costs, documentation accuracy
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 1</span>
+                                <span class="timeline-item__date">Q1-Q2 2026</span>
+                            </div>
+                            <div class="timeline-item__title">Architecture & Internal Development</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Complete client modifications from Geth fork</li>
+                                    <li>Implement PoSA consensus mechanism</li>
+                                    <li>Develop treasury smart contracts</li>
+                                    <li>Internal testing and security review</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Modified Geth client</li>
+                                    <li>Treasury contract code</li>
+                                    <li>Internal test results</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Technical complexity, security vulnerabilities, timeline
+                                    slippage</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 2</span>
+                                <span class="timeline-item__date">July 2026</span>
+                            </div>
+                            <div class="timeline-item__title">Testnet Launch</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Launch public testnet</li>
+                                    <li>Enable public smart contract deployment</li>
+                                    <li>Publish all technical, legal, and economic documentation</li>
+                                    <li>Begin external security audits</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Live testnet</li>
+                                    <li>Testnet faucet</li>
+                                    <li>Block explorer</li>
+                                    <li>Developer documentation</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Network instability, security issues, documentation gaps</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 3</span>
+                                <span class="timeline-item__date">Q3 2026</span>
+                            </div>
+                            <div class="timeline-item__title">Developer Onboarding</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Establish developer relations program</li>
+                                    <li>Launch grant program for ecosystem projects</li>
+                                    <li>Publish tutorials and integration guides</li>
+                                    <li>Host developer workshops</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Developer portal</li>
+                                    <li>Grant application process</li>
+                                    <li>Tutorial content</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Developer adoption, competition, resource constraints</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 4</span>
+                                <span class="timeline-item__date">Q4 2026</span>
+                            </div>
+                            <div class="timeline-item__title">Validator Expansion</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Open validator applications</li>
+                                    <li>Implement validator onboarding process</li>
+                                    <li>Expand active validator set</li>
+                                    <li>Improve geographic distribution</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Validator application portal</li>
+                                    <li>Validator documentation</li>
+                                    <li>Monitoring dashboards</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Validator quality, centralization concerns, coordination</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-item__header">
+                                <span class="timeline-item__phase">Phase 5</span>
+                                <span class="timeline-item__date">2027+</span>
+                            </div>
+                            <div class="timeline-item__title">Governance Evolution</div>
+                            <div class="timeline-item__content">
+                                <p><strong>Goals:</strong></p>
+                                <ul>
+                                    <li>Implement on-chain governance mechanisms</li>
+                                    <li>Transfer authority to community governance</li>
+                                    <li>Establish DAO structure for treasury management</li>
+                                    <li>Reduce founding team control</li>
+                                </ul>
+                                <p><strong>Deliverables:</strong></p>
+                                <ul>
+                                    <li>Governance contracts</li>
+                                    <li>Proposal and voting system</li>
+                                    <li>DAO documentation</li>
+                                </ul>
+                                <p><strong>Risks:</strong> Governance attacks, voter apathy, coordination failures</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Governance -->
+                <section id="governance" class="doc-section">
+                    <h2>11. Governance</h2>
+
+                    <h3>11.1 Initial Governance Structure</h3>
+                    <p>
+                        At genesis, the RedFace Network will operate under a <strong>benevolent dictatorship
+                            model</strong> with the founding team maintaining authority over protocol upgrades,
+                        treasury expenditures, and validator admission. This is explicitly acknowledged as a
+                        centralized starting point.
+                    </p>
+                    <p>Rationale for initial centralization:</p>
+                    <ul>
+                        <li>Rapid response to security issues during early network operation</li>
+                        <li>Ability to iterate quickly on protocol improvements</li>
+                        <li>Clear accountability during bootstrap phase</li>
+                        <li>Regulatory clarity regarding responsible parties</li>
+                    </ul>
+
+                    <h3>11.2 Upgrade Authority</h3>
+                    <p>During the initial phase, the following upgrade authorities apply:</p>
+                    <ul>
+                        <li><strong>Protocol Upgrades:</strong> Founding team with community notice period</li>
+                        <li><strong>Smart Contract Upgrades:</strong> Multi-sig controlled by founding team</li>
+                        <li><strong>Parameter Changes:</strong> Founding team with public documentation</li>
+                        <li><strong>Emergency Actions:</strong> Founding team for critical security issues</li>
+                    </ul>
+
+                    <h3>11.3 Decentralization Roadmap</h3>
+                    <p>
+                        Progressive decentralization will proceed through defined stages:
+                    </p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Authority Model</th>
+                                    <th>Trigger</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Genesis</td>
+                                    <td>Founding team control</td>
+                                    <td>Network launch</td>
+                                </tr>
+                                <tr>
+                                    <td>Advisory</td>
+                                    <td>Community input on major decisions</td>
+                                    <td>6 months stable operation</td>
+                                </tr>
+                                <tr>
+                                    <td>Proposal</td>
+                                    <td>Community can propose changes</td>
+                                    <td>12 months stable operation</td>
+                                </tr>
+                                <tr>
+                                    <td>Voting</td>
+                                    <td>Token-weighted voting on proposals</td>
+                                    <td>Governance contracts deployed</td>
+                                </tr>
+                                <tr>
+                                    <td>Full DAO</td>
+                                    <td>On-chain governance controls protocol</td>
+                                    <td>Proven governance stability</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>11.4 Community Involvement</h3>
+                    <p>Even during the initial centralized phase, community involvement is encouraged through:</p>
+                    <ul>
+                        <li>Public discussion forums for protocol proposals</li>
+                        <li>Bug bounty program for security contributions</li>
+                        <li>Grant program for ecosystem development</li>
+                        <li>Open-source contribution to client software</li>
+                        <li>Transparency reports and community calls</li>
+                    </ul>
+                </section>
+
+                <!-- SECTION: Security -->
+                <section id="security" class="doc-section">
+                    <h2>12. Security Model</h2>
+
+                    <h3>12.1 Threat Model</h3>
+                    <p>RedFace acknowledges and addresses the following threat categories:</p>
+                    <ul>
+                        <li><strong>Consensus Attacks:</strong> Validator collusion, stake manipulation</li>
+                        <li><strong>Smart Contract Vulnerabilities:</strong> Bugs in core or user contracts</li>
+                        <li><strong>Network Attacks:</strong> Eclipse attacks, DDoS, Sybil attacks</li>
+                        <li><strong>Economic Attacks:</strong> Fee manipulation, MEV extraction</li>
+                        <li><strong>Key Compromise:</strong> Theft of validator or admin keys</li>
+                    </ul>
+
+                    <h3>12.2 Security Measures</h3>
+                    <ul>
+                        <li>Professional security audits of client modifications</li>
+                        <li>Multi-signature requirements for administrative functions</li>
+                        <li>Slashing conditions for provable validator misbehavior</li>
+                        <li>Time-locks on critical protocol changes</li>
+                        <li>Bug bounty program for responsible disclosure</li>
+                    </ul>
+
+                    <h3>12.3 Known Limitations</h3>
+                    <div class="info-card info-card--warning">
+                        <div class="info-card__title">⚠️ Honest Acknowledgments</div>
+                        <div class="info-card__content">
+                            <p>RedFace does NOT claim to:</p>
+                            <ul>
+                                <li>Be more secure than Ethereum mainnet</li>
+                                <li>Have equivalent decentralization to Ethereum</li>
+                                <li>Be immune to all attack vectors</li>
+                                <li>Guarantee 100% uptime or availability</li>
+                                <li>Prevent all smart contract vulnerabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>12.4 Responsible Disclosure</h3>
+                    <p>
+                        Security researchers who discover vulnerabilities are encouraged to report them
+                        through our responsible disclosure process:
+                    </p>
+                    <ol>
+                        <li>Email security details to: <code>security@redface.network</code> (placeholder)</li>
+                        <li>Include detailed reproduction steps</li>
+                        <li>Allow reasonable time for patch development</li>
+                        <li>Coordinate public disclosure with the team</li>
+                    </ol>
+                    <p>
+                        Researchers who follow responsible disclosure guidelines are eligible for bug bounty
+                        rewards based on severity and impact.
+                    </p>
+                </section>
+
+                <!-- SECTION: Disclaimers -->
+                <section id="disclaimers" class="doc-section">
+                    <h2>13. Disclaimers & Transparency Statement</h2>
+
+                    <div class="info-card info-card--danger">
+                        <div class="info-card__title">⛔ Important Disclaimers</div>
+                        <div class="info-card__content">
+                            <p><strong>Please read these disclaimers carefully before engaging with the RedFace
+                                    Network.</strong></p>
+                        </div>
+                    </div>
+
+                    <h3>13.1 No Investment Advice</h3>
+                    <p>
+                        Nothing in this documentation constitutes investment advice, financial advice, trading advice,
+                        or any other kind of advice. You should not treat any of the content as such. The RedFace
+                        team does not recommend that any cryptocurrency should be bought, sold, or held by you.
+                    </p>
+
+                    <h3>13.2 No Guarantees</h3>
+                    <p>
+                        <strong>The RedFace Network and its associated documentation are provided "AS IS" without
+                            warranty of any kind.</strong> We make no guarantees regarding:
+                    </p>
+                    <ul>
+                        <li>Network uptime or availability</li>
+                        <li>Transaction finality or irreversibility</li>
+                        <li>Smart contract security or correctness</li>
+                        <li>Token value or liquidity</li>
+                        <li>Regulatory treatment in any jurisdiction</li>
+                        <li>Future development or feature implementation</li>
+                    </ul>
+
+                    <h3>13.3 Risk Acknowledgment</h3>
+                    <p>
+                        By using the RedFace Network, you acknowledge that you understand and accept the significant
+                        risks involved in cryptocurrency and blockchain technology, including but not limited to:
+                    </p>
+                    <ul>
+                        <li>Complete loss of funds due to technical failure</li>
+                        <li>Complete loss of funds due to security vulnerabilities</li>
+                        <li>Regulatory actions that may affect network operations</li>
+                        <li>Market volatility and liquidity risks</li>
+                        <li>Technology becoming obsolete or non-competitive</li>
+                    </ul>
+
+                    <h3>13.4 Forward-Looking Statements</h3>
+                    <p>
+                        This documentation contains forward-looking statements regarding planned features, timelines,
+                        and developments. These statements are based on current expectations and are subject to change.
+                        Actual results may differ materially from those expressed or implied.
+                    </p>
+
+                    <h3>13.5 Independent Verification</h3>
+                    <p>
+                        Users are encouraged to independently verify all claims made in this documentation, conduct
+                        their own research, and consult with qualified professionals before making any decisions
+                        related to the RedFace Network.
+                    </p>
+
+                    <h3>13.6 Transparency Commitment</h3>
+                    <p>
+                        Despite the necessary legal disclaimers above, the RedFace team is committed to
+                        maximum transparency:
+                    </p>
+                    <ul>
+                        <li>All treasury transactions will be publicly visible</li>
+                        <li>Development progress will be regularly communicated</li>
+                        <li>Setbacks and challenges will be openly discussed</li>
+                        <li>Material changes to plans will be promptly disclosed</li>
+                        <li>This documentation will be kept updated</li>
+                    </ul>
+
+                    <div class="info-card info-card--info">
+                        <div class="info-card__title">ℹ️ Documentation Updates</div>
+                        <div class="info-card__content">
+                            <p>
+                                This documentation is a living document and will be updated as the project evolves.
+                                Users should check for the latest version before making decisions based on this
+                                information.
+                            </p>
+                            <p>
+                                <strong>Document Version:</strong> 0.1.0-draft<br>
+                                <strong>Last Updated:</strong> December 2024<br>
+                                <strong>Status:</strong> Pre-Testnet Development
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="doc-footer">
+                <div class="doc-footer__content">
+                    <div class="doc-footer__info">
+                        <strong>RedFace Blockchain Network</strong> | Documentation v0.1.0-draft<br>
+                        Last Updated: December 2024 | Status: Pre-Testnet Development
+                    </div>
+                    <div class="doc-footer__links">
+                        <a href="#introduction">Top</a>
+                        <a href="#disclaimers">Disclaimers</a>
+                        <a href="#legal">Legal</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        // Close sidebar when clicking a link (mobile)
+        document.querySelectorAll('.doc-sidebar__link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+
+        // Highlight active section on scroll
+        const sections = document.querySelectorAll('.doc-section[id]');
+        const navLinks = document.querySelectorAll('.doc-sidebar__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
